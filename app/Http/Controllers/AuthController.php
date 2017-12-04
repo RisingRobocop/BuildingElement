@@ -10,7 +10,7 @@ class AuthController extends Controller
     //tranne il logout tutti i metodi possono esere chiamati solo se non si è loggati
     public function __construct()
     {
-       $this->middleware('guest')->expect('logout');
+       $this->middleware('guest')->except('logout');
     }
 
     //mostra la form di registrazione per creare un utente

@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/register','AuthController@create');
+
+//Route::get('/','AuthController.create');
