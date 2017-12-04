@@ -17,6 +17,7 @@ class AuthController extends Controller
     public function create()
     {
         //
+        return view('auth/register');
     }
 
     //salva l'utente nel database
