@@ -5,8 +5,9 @@
     <title>Registrazione</title>
   </head>
   <body>
-    <form class="" action="index.html" method="post">
-      user<input type="text" name="user" value="">
+    <form class="" action="/register" method="post">
+      {{ csrf_field() }}
+      user<input type="text" name="name" value="">
       password<input type="password" name="password" value="">
       <input type="submit" name="" value="confirm">
     </form>

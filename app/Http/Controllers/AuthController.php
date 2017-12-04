@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class AuthController extends Controller
 {
@@ -24,6 +25,14 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(['name'=>'required',
+                          'password'=>'required']);
+      $user=new User();
+      $user->name=$request->name;
+      $user->password=bcrypt($request->password);
+      $user->save();
+          dd('done');
+      redirect('/');
     }
 
     //mostra la form di login
