@@ -15,6 +15,10 @@
 //Route::get('/register','AuthController@create');
 //Route::post('/register','AuthController@store');
 
+
+//gestione login
 Route::get('/','AuthController@create');
-Route::get('/login','AuthController@showlogin')
-Route::post('/login','AuthController@loginAttempt')
+Route::get('/login','AuthController@showlogin');
+Route::post('/login','AuthController@loginAttempt');
+
+//gestione home
