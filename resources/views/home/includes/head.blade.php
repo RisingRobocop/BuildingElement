@@ -12,19 +12,19 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 
-		<link rel="stylesheet" href="/assets/css/normalize.css">
-		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="/assets/css/style.css">
-		<link rel="shortcut icon" href="/assets/img/favicon.ico">
-		<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<script type='text/javascript' src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js'></script>
+		<script type='text/javascript' src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js'></script> 
 		<![endif]-->
-		<script src="/assets/js/modernizr-2.8.3.min.js"></script>
+		<script src="js/modernizr-2.8.3.min.js"></script>
 	</head>
 	<body>
 		<!--[if lte IE 8]>
