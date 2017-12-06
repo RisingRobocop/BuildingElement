@@ -36,7 +36,7 @@ class AuthController extends Controller
     }
 
     //mostra la form di login
-    public function Showlogin()
+    public function showlogin()
     {
 
     }

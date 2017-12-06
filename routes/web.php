@@ -11,8 +11,10 @@
 |
 */
 
-//Creazione utente CMS lasciare commentato se non si vuole rendere disponibile la form di registrazione utente
+//Creazione utente CMS lasciare commentato se non si vuole rendere disponibile la form di registrazione per nuovi utenti
 //Route::get('/register','AuthController@create');
 //Route::post('/register','AuthController@store');
 
 Route::get('/','AuthController@create');
+Route::get('/login','AuthController@showlogin')
+Route::post('/login','AuthController@loginAttempt')
