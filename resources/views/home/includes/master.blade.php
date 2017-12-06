@@ -1,0 +1,5 @@
+@include ('home.includes.head')
+@include ('home.includes.header')
+@yield('content')
+@include ('home.includes.footer')
+@include ('home.includes.foot')
