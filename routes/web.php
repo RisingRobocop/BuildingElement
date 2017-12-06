@@ -17,8 +17,12 @@
 
 
 //gestione login
-Route::get('/','AuthController@create');
 Route::get('/login','AuthController@showlogin');
 Route::post('/login','AuthController@loginAttempt');
 
-//gestione home
+//gestione home (parte visibile ai vistatori del sito)
+Route::get('/','HomeController@home');
+Route::get('/about','HomeController@about');
+Route::get('/services','HomeController@services');
+Route::get('/projects','HomeController@projects');
+Route::get('/contact','HomeController@contact');
