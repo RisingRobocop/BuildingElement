@@ -11,7 +11,7 @@
 	</div>
 </footer>
 </div><!-- chiusura div id wrapper -->
-@if ( isset($inHome))
+@if (Route::currentRouteName()=='home')
 </div>
 @endif
 <!-- chiusura div id home, da scrivere solo se si è in home -->
