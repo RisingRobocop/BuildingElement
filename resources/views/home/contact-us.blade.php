@@ -1,5 +1,5 @@
-<?php include('includes/head.php') ?>
-<?php include('includes/header.php') ?>
+@extends('home.includes.master')
+@section('content')
 <div class="container m_top20 m_bot20 content">
 	<div class="row m_top">
 		<div class="col-sm-4 m_bot">
@@ -23,6 +23,7 @@
 					email: <a href="info@buildingelement.ch">info@buildingelement.ch</a>
 				</div>
 				<hr>
+				
 				<form>
 					<div class="form-group m_bot20">
 						<label for="name">NOME</label>
@@ -42,9 +43,9 @@
 					</div>
 					<button type="submit" class="form_button m_top20">INVIA</button>
 				</form>
+
 			</div>
 		</div>
 	</div>
 </div>
-<?php include('includes/footer.php') ?>
-<?php include('includes/foot.php') ?>
+@endsection

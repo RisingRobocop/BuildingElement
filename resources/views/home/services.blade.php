@@ -1,5 +1,5 @@
-<?php include('includes/head.php') ?>
-<?php include('includes/header.php') ?>
+@extends('home.includes.master')
+@section('content')
     <div class="container content">
         <div class="row">
             <div class="col-sm-7">
@@ -85,5 +85,4 @@
             </div>
         </div>
     </div>
-<?php include('includes/footer.php') ?>
-<?php include('includes/foot.php') ?>
+@endsection

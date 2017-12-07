@@ -1,15 +1,16 @@
 
-
+<!-- da scrivere solo se si è in home -->
 @if (Route::currentRouteName()=='home')
 <div id="home">
 @endif
-<!-- da scrivere solo se si è in home -->
+
 <div id="wrapper">
 	<div class="overlay"></div>
 	<header>
 		<nav class="navbar" id="sidebar-wrapper" role="navigation">
 			<ul class="nav sidebar-nav navbar-nav">
 				<li class="sidebar-brand"><a href="/"><img src="img/logo.png" title="Building Element" alt="Buiding Element"></a></li>
+				<!-- esiste una maniera più pulita e modulare per gestire l'active? -->
 				<li @if(Route::currentRouteName()=='home')class="active"@endif><a href={{route('home')}}>HOME</a></li>
 				<li @if(Route::currentRouteName()=='about')class="active"@endif><a href={{route('about')}}>ABOUT US</a></li>
 				<li @if(Route::currentRouteName()=='services')class="active"@endif><a href={{route('services')}}>SERVICES</a></li>

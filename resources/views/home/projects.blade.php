@@ -1,5 +1,5 @@
-<?php include('includes/head.php') ?>
-<?php include('includes/header.php') ?>
+@extends('home.includes.master')
+@section('content')
 <div class="container-fluid m_top20 m_bot20 content" id="projects">
 	<div class="row">
 		<div class="col-sm-3 col-xs-6">
@@ -32,5 +32,4 @@
 		</div>
 	</div>
 </div>
-<?php include('includes/footer.php') ?>
-<?php include('includes/foot.php') ?>
+@endsection
