@@ -1,7 +1,6 @@
-<?php include('includes/head.php') ?>
-<?php include('includes/header.php') ?>
+@extends('home.includes.master')
+@section('content')
 <div class="container content">
-
 	<div class="row m_top">
 		<div class="col-md-3 col-sm-4">
 			<img class="hidden-xs m_bot" src="img/about-us/about-us_01.png" class="m_bot20">
@@ -203,5 +202,4 @@
 
 	</div>
 </div>
-<?php include('includes/footer.php') ?>
-<?php include('includes/foot.php') ?>
+@endsection

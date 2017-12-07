@@ -1,4 +1,5 @@
-@extends('home/includes/master')
+@extends('home.includes.master')
+@section('content')
 	<div class="visible-xs visible-sm" id="home_shadow"></div>
 
 	<div class="carousel slide" data-ride="carousel" id="home_car">
@@ -33,3 +34,4 @@
 			</div>
 		</div>
 	</div>
+	@endsection

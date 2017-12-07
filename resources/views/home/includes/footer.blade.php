@@ -11,4 +11,7 @@
 	</div>
 </footer>
 </div><!-- chiusura div id wrapper -->
-</div><!-- chiusura div id home, da scrivere solo se si è in home -->
+@if ( isset($inHome))
+</div>
+@endif
+<!-- chiusura div id home, da scrivere solo se si è in home -->

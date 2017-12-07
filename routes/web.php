@@ -21,8 +21,8 @@ Route::get('/login','AuthController@showlogin');
 Route::post('/login','AuthController@loginAttempt');
 
 //gestione home (parte visibile ai vistatori del sito)
-Route::get('/','HomeController@home');
-Route::get('/about','HomeController@about');
-Route::get('/services','HomeController@services');
-Route::get('/projects','HomeController@projects');
-Route::get('/contact','HomeController@contact');
+Route::get('/','HomeController@home')->name('home');
+Route::get('/about','HomeController@about')->name('about');
+Route::get('/services','HomeController@services')->name('services');
+Route::get('/projects','HomeController@projects')->name('projects');
+Route::get('/contact','HomeController@contact')->name('contact');
