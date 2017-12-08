@@ -45,7 +45,7 @@ class AuthController extends Controller
     //prova ad autenticare
     public function login(Request $request)
     {
-      if (Auth::attempt(['name' => $request->user, 'password' => $request->password])) {
+      if (Auth::attempt(['name' => $request->user, 'password' => $request->password],$request->remember)) {
             // autenticazione passata...
             return redirect('/');
         }
@@ -56,5 +56,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
       Auth::logout();
+      return redirect('/');
     }
 }
