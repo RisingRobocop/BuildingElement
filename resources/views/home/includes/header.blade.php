@@ -16,6 +16,10 @@
 				<li @if(Route::currentRouteName()=='services')class="active"@endif><a href={{route('services')}}>SERVICES</a></li>
 				<li @if(Route::currentRouteName()=='projects')class="active"@endif><a href={{route('projects')}}>PROJECTS</a></li>
 				<li @if(Route::currentRouteName()=='contact')class="active"@endif><a href={{route('contact')}}>CONTACT US</a></li>
+					@if (Auth::check())
+					<li class="active"><a href="">ADMINISTRATION</a></li>
+					<li class="active"><a href="/logout">LOGOUT</a></li>
+					@endif
 			</ul>
 		</nav>
 		<button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class AuthController extends Controller
@@ -38,18 +39,22 @@ class AuthController extends Controller
     //mostra la form di login
     public function showlogin()
     {
-
+      return view('auth/login');
     }
 
     //prova ad autenticare
-    public function loginAttempt(Request $request)
+    public function login(Request $request)
     {
-
+      if (Auth::attempt(['name' => $request->user, 'password' => $request->password])) {
+            // autenticazione passata...
+            return redirect('/');
+        }
+      return redirect('/login');
     }
 
     //chiude la sessione
     public function logout(Request $request)
     {
-
+      Auth::logout();
     }
 }

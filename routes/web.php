@@ -18,7 +18,8 @@
 
 //gestione login
 Route::get('/login','AuthController@showlogin');
-Route::post('/login','AuthController@loginAttempt');
+Route::post('/login','AuthController@login');
+Route::post('/logout','AuthController@logout');
 
 //gestione home (parte visibile ai vistatori del sito)
 Route::get('/','HomeController@home')->name('home');
