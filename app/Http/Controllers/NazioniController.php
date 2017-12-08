@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\nazioni;
+use App\Nazioni;
 use Illuminate\Http\Request;
 
 class NazioniController extends Controller
@@ -41,10 +41,10 @@ class NazioniController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\nazioni  $nazioni
+     * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function show(nazioni $nazioni)
+    public function show(Nazioni $nazioni)
     {
         //
     }
@@ -52,10 +52,10 @@ class NazioniController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\nazioni  $nazioni
+     * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function edit(nazioni $nazioni)
+    public function edit(Nazioni $nazioni)
     {
         //
     }
@@ -64,10 +64,10 @@ class NazioniController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\nazioni  $nazioni
+     * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, nazioni $nazioni)
+    public function update(Request $request, Nazioni $nazioni)
     {
         //
     }
@@ -75,10 +75,10 @@ class NazioniController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\nazioni  $nazioni
+     * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nazioni $nazioni)
+    public function destroy(Nazioni $nazioni)
     {
         //
     }
