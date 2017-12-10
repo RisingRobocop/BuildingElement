@@ -21,8 +21,7 @@ class NazioniController extends Controller
     public function index()
     {
         //
-        $nazioni=Nazioni::all();
-        dd($nazioni);
+        return view('admin.nations');
     }
 
     /**

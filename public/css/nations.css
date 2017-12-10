@@ -1,0 +1,19 @@
+.title{
+  margin-top: 10%;
+}
+#sortable{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 45%;
+}
+
+img{
+  max-width: 32%;
+  border-radius: 3px;
+  border: 2px,2px,2px,2px;
+}
+
+.right{
+  margin-top: 10%;
+}
