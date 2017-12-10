@@ -22,32 +22,11 @@
     <h1 class='title'>Nations</h1>
 
       <ul id='sortable' class='list-group'>
-        <li class="list-group-item list-group-item flex-column align-items-start ">
-            <div class="row">
-              <div class="col-md-8">
-                <a href="#"><img src="uploads/svizzera_copertina.jpg" alt="Svizzera" title="Svizzera" ></a>
-              </div>
-              <div class="col-md-4">
-                <h1 class="right">Switzerland</h1>
-              </div>
-            </div>
-        </li>
-        <li class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small>item 2</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>Donec id elit non mi porta.</small>
-        </li>
-        <li class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small>item 3</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>Donec id elit non mi porta.</small>
-        </li>
+        <li class="list-group-item">Antartica</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
       </ul>
 
     </div>
