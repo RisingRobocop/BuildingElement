@@ -15,7 +15,7 @@
     <div class="pure-menu pure-menu-horizontal">
         <a href="#" class="pure-menu-heading">ADMINISTRATION</a>
         <ul class="pure-menu-list">
-            
+
         </ul>
     </div>
 
@@ -34,7 +34,7 @@
 
           </p>
           <a class="pure-button pure-button-primary" href="#">Complete</a>
-          <a class="pure-button pure-button-primary" href="#">Add nation</a>
+          <a class="pure-button pure-button-primary" href="nations/create">Add nation</a>
         </div>
 
 

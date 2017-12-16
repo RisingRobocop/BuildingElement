@@ -29,4 +29,5 @@ Route::get('/projects','HomeController@projects')->name('projects');
 Route::get('/contact','HomeController@contact')->name('contact');
 
 //gestione pannello amministrazione
-Route::get('/admin','NazioniController@index');
+Route::get('/nations','NazioniController@index');
+Route::get('/nations/create','NazioniController@create');

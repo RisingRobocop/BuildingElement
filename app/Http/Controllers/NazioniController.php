@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Nazioni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NazioniController extends Controller
 {
@@ -15,7 +16,7 @@ class NazioniController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
+     * mostra tutte le nazioni
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -26,23 +27,40 @@ class NazioniController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * mostra form di creazione nazioni
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
+          return view('admin.createNation');
+
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     * memorizza nuove nazioni nel database e salva immagini per la mappa e lo sfondo
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('sfondo') && $request->file('sfondo')->isValid())
+        {
+          $path = $request->photo->store('','public');
+          dd('path');
+        }
+
+        $request->validate(['nome_it'=>'required',
+                          'nome_en'=>'required',
+                          'nome_de'=>'required',
+                          'platform_id'=>'required']);
+        $nazione->nome_it=$request->input('nome_it');
+        $nazione->nome_en=$request->input('nome_en');
+        $nazione->nome_de=$request->input('nome_de');
+        $party->slots=$request->input('slots');
+        $party->save();
+
     }
 
     /**
