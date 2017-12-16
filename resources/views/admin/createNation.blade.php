@@ -1,7 +1,8 @@
 @extends('admin.layout.master')
 @section('content')
 <div class="">
-  <form class="pure-form pure-form-aligned">
+  <form class="pure-form pure-form-aligned" method="POST" action="/nations" enctype="multipart/form-data">
+    {{ csrf_field() }}
     <fieldset>
         <div class="pure-control-group">
             <label>English name</label>

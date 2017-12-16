@@ -45,12 +45,18 @@ class NazioniController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('sfondo') && $request->file('sfondo')->isValid())
+        if ($request->hasFile('sfondo')||$request->file('sfondo')->isValid())
         {
-          $path = $request->photo->store('','public');
-          dd('path');
+          $sfondo = $request->file('sfondo')->store('','public');
         }
 
+        if ($request->hasFile('mappa')||$request->file('mappa')->isValid())
+        {
+          $sfondo = $request->file('sfondo')->store('','public');
+        }
+
+
+        dd('nope');
         $request->validate(['nome_it'=>'required',
                           'nome_en'=>'required',
                           'nome_de'=>'required',
@@ -58,7 +64,7 @@ class NazioniController extends Controller
         $nazione->nome_it=$request->input('nome_it');
         $nazione->nome_en=$request->input('nome_en');
         $nazione->nome_de=$request->input('nome_de');
-        $party->slots=$request->input('slots');
+        $nazione->slots=$request->input('slots');
         $party->save();
 
     }
