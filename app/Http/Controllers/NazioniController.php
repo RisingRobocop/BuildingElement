@@ -45,27 +45,26 @@ class NazioniController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('sfondo')||$request->file('sfondo')->isValid())
+        $nazione=new Nazioni();
+        $request->validate(['name_it'=>'required',
+                          'name_en'=>'required',
+                          'name_de'=>'required']);
+
+        if ($request->hasFile('map') && $request->file('map')->isValid())
         {
-          $sfondo = $request->file('sfondo')->store('','public');
+          $nazione->mappa = $request->file('map')->store('','public');
         }
 
-        if ($request->hasFile('mappa')||$request->file('mappa')->isValid())
+        if ($request->hasFile('background')&&$request->file('background')->isValid())
         {
-          $sfondo = $request->file('sfondo')->store('','public');
+            $nazione->sfondo = $request->file('background')->store('','public');
         }
 
-
-        dd('nope');
-        $request->validate(['nome_it'=>'required',
-                          'nome_en'=>'required',
-                          'nome_de'=>'required',
-                          'platform_id'=>'required']);
-        $nazione->nome_it=$request->input('nome_it');
-        $nazione->nome_en=$request->input('nome_en');
-        $nazione->nome_de=$request->input('nome_de');
-        $nazione->slots=$request->input('slots');
-        $party->save();
+        $nazione->nome_en=$request->input('name_en');
+        $nazione->nome_it=$request->input('name_it');
+        $nazione->nome_de=$request->input('name_de');
+        $nazione->save();
+        dd('done');
 
     }
 

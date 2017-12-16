@@ -6,27 +6,27 @@
     <fieldset>
         <div class="pure-control-group">
             <label>English name</label>
-            <input name="nome_en" type="text" placeholder="English name" required>
+            <input name="name_en" type="text" placeholder="English name" required>
         </div>
 
         <div class="pure-control-group">
             <label>Italian name</label>
-            <input name="nome_it" type="text" placeholder="Italian name" required>
+            <input name="name_it" type="text" placeholder="Italian name" required>
         </div>
 
         <div class="pure-control-group">
             <label>German name</label>
-            <input name="nome_de" type="text" placeholder="German name" required>
+            <input name="name_de" type="text" placeholder="German name" required>
         </div>
 
         <div class="pure-control-group">
             <label >Background image</label>
-            <input type="file" name="sfondo" value="">
+            <input type="file" name="background" value="">
         </div>
 
         <div class="pure-control-group">
             <label >Map image</label>
-            <input type="file" name="mappa" value="">
+            <input type="file" name="map" value="">
         </div>
 
         <div class="pure-controls">
