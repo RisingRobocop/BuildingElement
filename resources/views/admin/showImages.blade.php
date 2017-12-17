@@ -17,18 +17,17 @@
 				  <li class="ui-state-default">12</li>
 				</ul>
 		</div>
-		
-	</div>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+	</div>
 @endsection
 
 @section('scripts')
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 	$( function() {
-		$( "#sortable" ).sortable();
-		$( "#sortable" ).disableSelection();
-	} );
+		$( "#sortable-images" ).sortable();
+		$( "#sortable-images" ).disableSelection();
+	});
 	</script>
 @endsection

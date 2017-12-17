@@ -32,6 +32,7 @@ Route::get('/contact','HomeController@contact')->name('contact');
 Route::get('/admin/nations','NazioniController@index');
 Route::get('/admin/nations/create','NazioniController@create');
 Route::post('/admin/nations','NazioniController@store');
+Route::post('/admin/nations/sort','NazioniController@sort');
 
 Route::get('/admin/nations/{nation_id}/images','ImmaginiController@create');
 Route::post('/admin/nations/{nation_id}/images','ImmaginiController@store');

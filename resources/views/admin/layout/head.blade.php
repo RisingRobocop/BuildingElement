@@ -24,5 +24,6 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{ URL::asset('admin/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ URL::asset('admin/css/custom.css')}}">
+		<meta name="csrf_token" content="{{ csrf_token() }}" />
 
 </head>

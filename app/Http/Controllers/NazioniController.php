@@ -34,7 +34,7 @@ class NazioniController extends Controller
     public function create()
     {
         //
-          return view('admin.createNation');
+          return view('admin.showImages');
 
     }
 
@@ -66,6 +66,12 @@ class NazioniController extends Controller
         $nazione->nome_de=$request->input('name_de');
         $nazione->save();
         return redirect('admin/nations')->with('status', 'nation created.');
+
+    }
+
+    public function sort(Request $request)
+    {
+      return response()->json(['response' => 'This is post method']);
 
     }
 
