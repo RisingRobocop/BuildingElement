@@ -22,7 +22,7 @@ class NazioniController extends Controller
     public function index()
     {
         //
-        return view('admin.nations');
+        return view('admin.showNations');
     }
 
     /**
@@ -64,7 +64,7 @@ class NazioniController extends Controller
         $nazione->nome_it=$request->input('name_it');
         $nazione->nome_de=$request->input('name_de');
         $nazione->save();
-        dd('done');
+        return redirect('nations/create')->with('status', 'nation created.');
 
     }
 
@@ -76,7 +76,7 @@ class NazioniController extends Controller
      */
     public function show(Nazioni $nazioni)
     {
-        //
+
     }
 
     /**

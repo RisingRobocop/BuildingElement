@@ -1,0 +1,17 @@
+#sortable-images {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#sortable-images li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 200px; height: 200px; font-size: 4em; text-align: center; background-color: green}
+#sortable-images img {
+  width: 100px;
+  height: 90px;
+}
+
+.textbox
+{
+  display: flex;
+  justify-content: space-between;
+}
