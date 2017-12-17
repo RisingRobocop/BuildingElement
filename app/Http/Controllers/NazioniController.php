@@ -22,7 +22,8 @@ class NazioniController extends Controller
     public function index()
     {
         //
-        return view('admin.showNations');
+        $nazioni=Nazioni::select('id','nome_en','nome_it','nome_de')->orderby('ordine')->get();
+        return view('admin.showNations')->with('nazioni',$nazioni);
     }
 
     /**
@@ -64,7 +65,7 @@ class NazioniController extends Controller
         $nazione->nome_it=$request->input('name_it');
         $nazione->nome_de=$request->input('name_de');
         $nazione->save();
-        return redirect('nations/create')->with('status', 'nation created.');
+        return redirect('admin/nations')->with('status', 'nation created.');
 
     }
 

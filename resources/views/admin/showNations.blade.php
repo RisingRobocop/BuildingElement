@@ -2,15 +2,13 @@
 <div class="row">
 	<div class="col-md-11">
 		<ul id='sortable' class="list-group">
-			<li class="list-group-item"><div class="textbox"> <p>1/10</p> <p>02:27</p> <p>100%</p> </div></li>
-			<li class="list-group-item">Dapibus ac facilisis in</li>
-			<li class="list-group-item">Morbi leo risus</li>
-			<li class="list-group-item">Porta ac consectetur ac</li>
-			<li class="list-group-item">Vestibulum at eros</li>
+			@foreach ($nazioni as $nazione)
+				<li class="list-group-item"><div class="textbox"> <p>{{$nazione->nome_it}}</p> <p>{{$nazione->nome_en}}</p> <p>{{$nazione->nome_de}}</p> </div></li>
+			@endforeach
 		</ul>
 	</div>
 	<div class="col-md-1">
-		<a href="nations/create"><button class="btn btn-primary"> Add nation</button></a>
+		<a href='{{url('admin/nations/create')}}'><button class="btn btn-primary"> Add nation</button></a>
 	</div>
 </div>
 @endsection

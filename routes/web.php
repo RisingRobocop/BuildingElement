@@ -29,6 +29,9 @@ Route::get('/projects','HomeController@projects')->name('projects');
 Route::get('/contact','HomeController@contact')->name('contact');
 
 //gestione pannello amministrazione
-Route::get('/nations','NazioniController@index');
-Route::get('/nations/create','NazioniController@create');
-Route::post('/nations','NazioniController@store');
+Route::get('/admin/nations','NazioniController@index');
+Route::get('/admin/nations/create','NazioniController@create');
+Route::post('/admin/nations','NazioniController@store');
+
+Route::get('/admin/nations/{nation_id}/images','ImmaginiController@create');
+Route::post('/admin/nations/{nation_id}/images','ImmaginiController@store');
