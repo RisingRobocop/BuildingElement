@@ -34,7 +34,7 @@ class NazioniController extends Controller
     public function create()
     {
         //
-          return view('admin.createNation');
+          return view('admin.showImages');
 
     }
 
