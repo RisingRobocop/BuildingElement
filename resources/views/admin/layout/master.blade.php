@@ -22,7 +22,7 @@
               <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
-                            </a>
+                </a>
               </li>
             </ul>
 
@@ -30,7 +30,7 @@
               <li>
                 <a href="">
                                Account
-                            </a>
+                </a>
               </li>
             </ul>
           </div>

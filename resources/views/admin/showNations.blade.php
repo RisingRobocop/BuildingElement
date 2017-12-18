@@ -1,10 +1,10 @@
 @extends('admin.layout.master') @section('content')
 <div class="row">
 	<div class="col-md-1">
-		<a href='{{url('admin/nations/create')}}'><button  class="btn btn-primary"> Add nation</button></a>
+		<a href='{{url('admin/nations/create')}}'><button  class="custom btn btn-primary"> Add nation</button></a>
 	</div>
 	<div class="col-md-1">
-		<button  id='set-order' type="button" class='btn btn-primary' name="button">set order</button>
+		<button  id='set-order' type="button" class='custom btn btn-primary' name="button">set order</button>
 	</div>
 	<div class="col-md-12">
 		<span class="label label-info">Double click to edit a nation</span>
