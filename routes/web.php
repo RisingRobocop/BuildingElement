@@ -12,8 +12,8 @@
 */
 
 //Creazione utente CMS lasciare commentato se non si vuole rendere disponibile la form di registrazione per nuovi utenti
-Route::get('/register','AuthController@create');
-Route::post('/register','AuthController@store');
+//Route::get('/register','AuthController@create');
+//Route::post('/register','AuthController@store');
 
 
 //gestione login
@@ -29,4 +29,11 @@ Route::get('/projects','HomeController@projects')->name('projects');
 Route::get('/contact','HomeController@contact')->name('contact');
 
 //gestione pannello amministrazione
-Route::get('/admin','NazioniController@index');
+Route::get('/admin/nations','NazioniController@index');
+Route::get('/admin/nations/create','NazioniController@create');
+Route::post('/admin/nations','NazioniController@store');
+Route::post('/admin/nations/sort','NazioniController@sort');
+Route::get('/admin/nations/{nation_id}','NazioniController@show');
+
+Route::get('/admin/nations/{nation_id}/images','ImmaginiController@create');
+Route::post('/admin/nations/{nation_id}/images','ImmaginiController@store');
