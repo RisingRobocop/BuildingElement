@@ -69,10 +69,8 @@
   </div>
 
   <!--   Core JS Files   -->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="{{ URL::asset('admin/js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
 
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="{{ URL::asset('admin/js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
   <script src="{{ URL::asset('admin/js/bootstrap.min.js')}}" type="text/javascript"></script>
   <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
   <script src="{{ URL::asset('admin/js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>

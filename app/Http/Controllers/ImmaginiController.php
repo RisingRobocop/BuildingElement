@@ -25,7 +25,7 @@ class ImmaginiController extends Controller
      */
     public function create()
     {
-        return view('showImages')
+        return view('showImages');
     }
 
     /**

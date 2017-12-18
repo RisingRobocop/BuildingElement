@@ -69,6 +69,22 @@ class NazioniController extends Controller
 
     }
 
+    public function sort(Request $request)
+    {
+
+      $items=$request->input('item');
+      $i=0;
+      foreach ($items as $id)
+      {
+        $nazione= Nazioni::where('id',$id)->first();
+        $nazione->ordine=$i;
+        $nazione->save();
+        $i++;
+      }
+      return response()->json(['response' => 'done']);
+
+    }
+
     /**
      * Display the specified resource.
      *
