@@ -93,7 +93,7 @@ class NazioniController extends Controller
      */
     public function show(Nazioni $nazioni)
     {
-
+        return view('admin.nation');
     }
 
     /**

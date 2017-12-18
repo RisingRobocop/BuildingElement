@@ -6,6 +6,8 @@
 	<div class="col-md-1">
 		<button  id='set-order' type="button" class='btn btn-primary' name="button">set order</button>
 	</div>
+	<div class="col-md-12">
+		<span class="label label-info">Double click to edit a nation</span>
 </div>
 
 <div class="row">
@@ -24,37 +26,39 @@
 	<script>
 
 	$( function() {
-		var data;
-		var url='{{url('admin/nations/sort')}}';
-		var list=$( "#sortable" ).sortable();
+			var data;
+			var url='{{url('admin/nations/sort')}}';
+			var list=$( "#sortable" ).sortable();
 
-		$( "#set-order" ).on( "click", function()
-		{
-			data=$( "#sortable" ).sortable('serialize');
-			$.ajax({
-					data: data,
-					type: 'post',
-					url: url,
-					beforeSend: function (xhr)
-						{
-            	var token = $('meta[name="csrf_token"]').attr('content');
-            	if (token) {
-                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-            		}
-        		},
-					success: function(data)
-						{
-							console.log(data);
-							window.location.replace('{{url('admin/nations')}}');
-						}
-					})
-					.done(function( ) {
-							})
-					.fail(function()  {
-							console.log(url);
-    					alert("Sorry. Server unavailable. ");
+			$( "#set-order" ).on( "click", function()
+			{
+				data=$( "#sortable" ).sortable('serialize');
+				$.ajax({
+						data: data,
+						type: 'post',
+						url: url,
+						beforeSend: function (xhr)
+							{
+	            	var token = $('meta[name="csrf_token"]').attr('content');
+	            	if (token) {
+	                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+	            		}
+	        		},
+						success: function(data)
+							{
+								console.log(data);
+								window.location.replace('{{url('admin/nations')}}');
+							}
+						})
+						.done(function( ) {
+								})
+						.fail(function()  {
+								console.log(url);
+	    					alert("Sorry. Server unavailable. ");
+							});
 						});
-
+			$( "li" ).dblclick(function() {
+		  	window.location.replace('{{url('admin/nations')}}/'+$(this).attr('id').substring(5,1000));
 		});
 	});
 
