@@ -1,25 +1,7 @@
 @extends('admin.layout.master')
 
 @section('content')
-  <div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
   <div class="row">
     <div class="col-md-4">
       <form  method="POST" action='{{url('admin/nations/')}}'>
@@ -56,9 +38,9 @@
   <div class="row">
     <div class="col-md-12">
           <ul id="sortable-images">
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
+              <li id="item-1"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
+              <li id="item-2"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
+              <li id="item-3"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
               <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
               <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
               <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
@@ -67,8 +49,47 @@
             </ul>
     </div>
   </div>
-
 @endsection
+
+@section('popups')
+  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit image</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+          <form class="" action="index.html" method="post">
+            {{ csrf_field() }}
+          <input id='hidden' type="hidden" name="id" value="">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="">
+                Backgroud
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                  Map
+                </label>
+              </div>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-danger" value="Delete image">
+        <input type="submit" class="btn btn-primary" value="Save changes">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endsection
+
+
 
 @section('scripts')
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -108,6 +129,7 @@
 
       $( "li" ).dblclick(function() {
           $('.modal').modal('show');
+          $('.modal #hidden').attr('value', $(this).attr('id').substring(5,1000));
     });
   });
 	</script>

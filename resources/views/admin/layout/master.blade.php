@@ -67,6 +67,7 @@
 
     </div>
   </div>
+  @yield('popups')
 
   <!--   Core JS Files   -->
 
