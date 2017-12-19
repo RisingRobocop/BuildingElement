@@ -24,12 +24,19 @@
       </form>
     </div>
     <div class="col-md-2">
-      <img src="http://via.placeholder.com/150x150" class="img-thumbnail">
+      @if ($nazione->sfondo==null)
+        <img class="img-thumbnail" src="http://via.placeholder.com/150x150" class="img-thumbnail">
+      @else
+        <img class="img-thumbnail"  src="{{url('storage/uploads/'.$nazione->sfondo)}}">
+      @endif
 
     </div>
     <div class="col-md-2">
-      <img src="http://via.placeholder.com/150x150" class="img-thumbnail">
-
+      @if ($nazione->mappa==null)
+        <img class="img-thumbnail" src="http://via.placeholder.com/150x150" class="img-thumbnail">
+      @else
+        <img class="img-thumbnail"  src="{{url('storage/uploads/'.$nazione->mappa)}}">
+      @endif
     </div>
 
   </div>
@@ -41,11 +48,13 @@
             <input type="file" name="image">
           </div>
           <button type="submit" class="btn btn-primary">Add image</button>
+          <button id="set-order" class="btn btn-primary" type="button" name="button">set order</button>
         </form>
+
       <hr>
         <div class="col-md-12">
       		<span class="label label-info">Double click to delete an image or set it as background</span>
-          <span class="label label-info">Sort images by dragging then press done</span>
+          <span class="label label-info">Sort images by dragging then press set order</span>
       </div>
     </div>
 
@@ -53,7 +62,7 @@
   <div class="row">
     <div class="col-md-12">
           <ul id="sortable-images">
-              @foreach ($nazione->immagini as $immagine)
+              @foreach ($immagini as $immagine)
                 <li id={{'item-'.$immagine->id}}> <img class="img-thumbnail" src="{{url('storage/uploads/'.$immagine->indirizzo)}}" alt=""> </li>
               @endforeach
           </ul>
@@ -63,7 +72,7 @@
 
 @section('popups')
   <div class="modal" tabindex="-1" role="dialog">
-  <form class="" action="index.html" method="post">
+  <form class="" action='{{url('admin/nations/'.$nazione->id)}}' method="post">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -75,23 +84,23 @@
 
       <div class="modal-body">
           {{ csrf_field() }}
-          <input id='hidden' type="hidden" name="id" value="">
+          <input id='hidden' type="hidden" name="image-id" value="">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="">
+              <input class="form-check-input" type="checkbox" name='background' value="background">
                 Backgroud
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" name='map' value="map">
                   Map
                 </label>
               </div>
             </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-danger" value="Delete image">
-        <input type="submit" class="btn btn-primary" value="Save changes">
+        <input type="submit" class="btn btn-danger" name='delete' value="Delete image">
+        <input type="submit" class="btn btn-primary"name='save' value="Save changes">
       </div>
 
 
@@ -108,7 +117,7 @@
   <script>
   $( function() {
       var data;
-      var url='{{url('admin/nations/sort')}}';
+      var url='{{url('admin/images/sort')}}';
       var list=$( "#sortable-images" ).sortable();
 
       $( "#set-order" ).on( "click", function()
@@ -128,7 +137,7 @@
             success: function(data)
               {
                 console.log(data);
-                window.location.replace('{{url('admin/nations')}}');
+                window.location.replace('{{url('admin/nations/'.$nazione->id)}}');
               }
             })
             .done(function( ) {

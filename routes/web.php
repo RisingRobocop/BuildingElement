@@ -38,3 +38,5 @@ Route::post('/admin/nations/{nation_id}','NazioniController@update');
 
 Route::get('/admin/nations/{nation_id}/images','ImmaginiController@create');
 Route::post('/admin/nations/{nation_id}/images','ImmaginiController@store');
+Route::post('/admin/images/delete','ImmaginiController@delete');
+Route::post('/admin/images/sort','ImmaginiController@sort');

@@ -29,26 +29,20 @@ class ImmaginiController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function sort(Request $request)
     {
 
-    }
+      $items=$request->input('item');
+      $i=0;
+      foreach ($items as $id)
+      {
+        $immagine= Immagine::where('id',$id)->first();
+        $immagine->ordine=$i;
+        $immagine->save();
+        $i++;
+      }
+      return response()->json(['response' => 'done']);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**

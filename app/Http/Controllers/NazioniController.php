@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Nazioni;
+use App\Immagine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -84,7 +85,10 @@ class NazioniController extends Controller
     public function show($nation_id)
     {
         $nazione=Nazioni::select('id','nome_en','nome_it','nome_de','sfondo','mappa')->where('id',$nation_id)->first();
-        return view('admin.nation')->with('nazione',$nazione);
+        $immagini=Immagine::where('nazioni_id','=',$nation_id)->orderby('ordine')->get();
+        return view('admin.nation')
+                ->with('nazione',$nazione)
+                ->with('immagini',$immagini);
     }
 
     /**
@@ -96,7 +100,19 @@ class NazioniController extends Controller
      */
     public function update($nation_id,Request $request)
     {
+
        $nazione=Nazioni::where('id',$nation_id)->first();
+       if($request->has('image-id'))
+       {
+         $immagine=Nazioni::where('id',$nation_id)->first()->immagini()->where('id',$request->input('image-id'))->first();
+         if($request->input('map')!=null)
+          $nazione->mappa=$immagine->indirizzo;
+         if($request->input('background')!=null)
+           $nazione->sfondo=$immagine->indirizzo;
+        $nazione->save();
+        return redirect()->back();
+
+       }
        $request->validate(['name_it'=>'required',
                          'name_en'=>'required',
                          'name_de'=>'required']);
