@@ -51,16 +51,6 @@ class NazioniController extends Controller
                           'name_en'=>'required',
                           'name_de'=>'required']);
 
-        if ($request->hasFile('map') && $request->file('map')->isValid())
-        {
-          $nazione->mappa = $request->file('map')->store('','public');
-        }
-
-        if ($request->hasFile('background')&&$request->file('background')->isValid())
-        {
-            $nazione->sfondo = $request->file('background')->store('','public');
-        }
-
         $nazione->nome_en=$request->input('name_en');
         $nazione->nome_it=$request->input('name_it');
         $nazione->nome_de=$request->input('name_de');
@@ -91,20 +81,10 @@ class NazioniController extends Controller
      * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function show(Nazioni $nazioni)
+    public function show($nation_id)
     {
-        return view('admin.nation');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Nazioni  $nazioni
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Nazioni $nazioni)
-    {
-        //
+        $nazione=Nazioni::select('id','nome_en','nome_it','nome_de','sfondo','mappa')->where('id',$nation_id)->first();
+        return view('admin.nation')->with('nazione',$nazione);
     }
 
     /**
@@ -114,9 +94,18 @@ class NazioniController extends Controller
      * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Nazioni $nazioni)
+    public function update($nation_id,Request $request)
     {
-        //
+       $nazione=Nazioni::where('id',$nation_id)->first();
+       $request->validate(['name_it'=>'required',
+                         'name_en'=>'required',
+                         'name_de'=>'required']);
+       $nazione->nome_it=$request->input('name_it');
+       $nazione->nome_de=$request->input('name_de');
+       $nazione->nome_en=$request->input('name_en');
+       $nazione->save();
+       return redirect()->back();
+
     }
 
     /**

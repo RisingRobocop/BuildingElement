@@ -4,24 +4,23 @@
 
   <div class="row">
     <div class="col-md-4">
-      <form  method="POST" action='{{url('admin/nations/')}}'>
+      <form  method="post" action='{{url('admin/nations/'.$nazione->id)}}'>
         {{ csrf_field() }}
         <div class="form-group">
           <div class="text-muted">EN name</div>
-          <input type="text" class="form-control mx-sm-3" name="name_en">
+          <input type="text" class="form-control mx-sm-3" name="name_en" value="{{$nazione->nome_en}}">
         </div>
         <div class="form-group">
           <div class="text-muted">IT name</div>
-          <input type="text" class="form-control mx-sm-3" name="name_en">
+          <input type="text" class="form-control mx-sm-3" name="name_it" value="{{$nazione->nome_it}}">
         </div>
         <div class="form-group">
           <div class="text-muted">DE name</div>
-          <input type="text" class="form-control mx-sm-3" name="name_en">
+          <input type="text" class="form-control mx-sm-3" name="name_de" value="{{$nazione->nome_de}}">
         </div>
         <div class="form-group">
-          <input class="btn btn-primary" type="button" value="edit">
+          <input type="submit" name="" value="edit" class="btn btn-primary">
         </div>
-
       </form>
     </div>
     <div class="col-md-2">
@@ -35,36 +34,47 @@
 
   </div>
   <hr>
+    <div class="row">
+        <form enctype="multipart/form-data" class="form-inline" method="post" action='{{url('/admin/nations/'.$nazione->id.'/images')}}'>
+          {{ csrf_field() }}
+          <div class="form-group mx-sm-3">
+            <input type="file" name="image">
+          </div>
+          <button type="submit" class="btn btn-primary">Add image</button>
+        </form>
+      <hr>
+        <div class="col-md-12">
+      		<span class="label label-info">Double click to delete an image or set it as background</span>
+          <span class="label label-info">Sort images by dragging then press done</span>
+      </div>
+    </div>
+
+
   <div class="row">
     <div class="col-md-12">
           <ul id="sortable-images">
-              <li id="item-1"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li id="item-2"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li id="item-3"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-              <li class="ui-widget-content"><img src="http://via.placeholder.com/150x150" class="img-thumbnail"></li>
-            </ul>
+              @foreach ($nazione->immagini as $immagine)
+                <li id={{'item-'.$immagine->id}}> <img class="img-thumbnail" src="{{url('storage/uploads/'.$immagine->indirizzo)}}" alt=""> </li>
+              @endforeach
+          </ul>
     </div>
   </div>
 @endsection
 
 @section('popups')
   <div class="modal" tabindex="-1" role="dialog">
+  <form class="" action="index.html" method="post">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Edit image</h3>
+        <h3 class="modal-title">Edit image </h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
       <div class="modal-body">
-          <form class="" action="index.html" method="post">
-            {{ csrf_field() }}
+          {{ csrf_field() }}
           <input id='hidden' type="hidden" name="id" value="">
           <div class="form-check">
             <label class="form-check-label">
@@ -78,14 +88,16 @@
                   Map
                 </label>
               </div>
-      </div>
+            </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-danger" value="Delete image">
         <input type="submit" class="btn btn-primary" value="Save changes">
       </div>
-      </form>
+
+
+      </div>
     </div>
-  </div>
+  </form>
 </div>
 @endsection
 
@@ -130,6 +142,7 @@
       $( "li" ).dblclick(function() {
           $('.modal').modal('show');
           $('.modal #hidden').attr('value', $(this).attr('id').substring(5,1000));
+          $('.modal .modal-title').html('image:'+$(this).attr('id').substring(5,1000));
     });
   });
 	</script>

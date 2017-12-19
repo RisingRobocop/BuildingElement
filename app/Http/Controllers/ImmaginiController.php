@@ -8,25 +8,6 @@ use Illuminate\Http\Request;
 
 class ImmaginiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('showImages');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +17,16 @@ class ImmaginiController extends Controller
      */
     public function store(Request $request, $nation_id)
     {
-        //
+        $immagine=new Immagine();
+        $immagine->nazioni_id=$nation_id;
+        if ($request->hasFile('image') && $request->file('image')->isValid())
+        {
+          $immagine->indirizzo = $request->file('image')->store($nation_id,'public');
+          $immagine->save();
+          return redirect()->back();
+
+        }
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +37,7 @@ class ImmaginiController extends Controller
      */
     public function show($id)
     {
-      
+
     }
 
     /**

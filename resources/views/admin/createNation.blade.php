@@ -23,16 +23,6 @@
               <input class="form-control" name="name_de" type="text" placeholder="German name" required>
           </div>
 
-          <div class="form-group">
-              <label >Background image</label>
-              <input class="form-control-file" type="file" name="background" value="">
-          </div>
-
-          <div class="form-group">
-              <label >Map image</label>
-              <input class="form-control-file" type="file" name="map" value="">
-          </div>
-
 
               <button class="form-control" type="submit" class="pure-button pure-button-primary">Submit</button>
 
