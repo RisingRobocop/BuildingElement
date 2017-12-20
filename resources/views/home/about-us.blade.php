@@ -4,7 +4,7 @@
 	<div class="row m_top">
 		<div class="col-md-3 col-sm-4">
 			<img class="hidden-xs m_bot" src="img/about-us/about-us_01.png" class="m_bot20">
-			<p>Immaginazione, libertà creativa, armonia, ossessione per il dettaglio: seguiamo ogni storia dall'inizio alla fine. Iniziamo con la suggestione, l’idea, l’ispirazione. La affrontiamo come fosse un foglio bianco denso di sfide da disegnare e cogliere ponendosi le giuste domande, senza lasciarsi distrarre da tendenze effimere</p>
+			<p>@lang('about.title')</p>
 		</div>
 		<div class="col-sm-2 col-sm-offset-3 hidden-sm hidden-xs">
 			<div style="margin-top:130px;z-index:1;position:relative">
@@ -27,9 +27,8 @@
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4 col-sm-5 col-sm-offset-4" id="block_2">
 			<p>______</p>
-			<h3 class="m_top m_bot"><b>INSEGUIAMO UNA VISIONE</b>, E LA LASCIAMO SOLO QUANDO SI AVVERA.</h3>
-			<p>PROGETTAZIONE, DESIGN DEGLI INTERNI, COSTRUZIONE, ART DIRECTION: LE IDEE SCATURISCONO DAL CONFRONTO DIALETTICO TRA MOLTE MENTI E TALENTI CREATIVI TUTTI DI ALTISSIMO LIVELLO, CHE SI CONTAMINANO L’UN L’ALTRO.</p>
-			<div class="m_top20"><span class="form_button"><a href="#">SERVIZI</a></span></div>
+			<h3 class="m_top m_bot">@lang('about.caption-1')
+			<div class="m_top20"><span class="form_button"><a href="services">@lang('nav.services')</a></span></div>
 		</div>
 	</div>
 	<div class="row m_top">
@@ -44,16 +43,15 @@
 	</div>
 	<div class="row m_top">
 		<div class="col-md-4 col-md-offset-8 col-sm-8 col-sm-offset-4">
-			<p style="border: 1px solid #2e2d30;padding:100px 30px 20px;margin-top:-50px">L’APPROCCIO OLISTICO ALLA MATERIA, L’ASSILLO PER LA QUALITÀ E L’ATTITUDINE AD ASCOLTARE LE PERSONE E PREVEDERNE I DESIDERI CI PORTANO A CREARE <b>PROGETTI CON UNA FORTE IDENTITÀ, ETERNI, DESTINATI A RESTARE NEL TEMPO</b> E APPAGARE OGNI ESIGENZA.
+			<p style="border: 1px solid #2e2d30;padding:100px 30px 20px;margin-top:-50px">@lang('about.caption-2')
 			</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-md-offset-1 col-sm-5">
 			<p>______</p>
-			<h3 class="m_top m_bot">L’INNOVAZIONE, OLTRE AL <b>SENSO DEL BELLO</b>, È IL FULCRO DI OGNI NOSTRO PROGETTO.</h3>
-			<p>CREDIAMO CHE IL DESIGN DEBBA OSARE, ESSERE PROTESO VERSO IL NUOVO PUR SENZA RINNEGARE IL PASSATO. A UNA CONDIZIONE: CHE SIA SOSTENIBILE. IL FATTO CHE OGNI NOSTRO EDIFICIO DIVENTI ICONICO NON È IL FINE, MA UNA CONSEGUENZA NATURALE DI QUELLO CHE PERSEGUIAMO: CREARE UNO SPAZIO DI ASSOLUTA QUALITÀ PER LE PERSONE.</p>
-			<div class="m_top20"><span class="form_button"><a href="#">PROGETTI</a></span></div>
+			<h3 class="m_top m_bot">@lang('about.caption-3')
+			<div class="m_top20"><span class="form_button"><a href="projects">@lang('nav.projects')</a></span></div>
 		</div>
 		<div class="col-sm-6 col-sm-offset-1">
 			<div style="position:absolute;margin-top:60px">
@@ -78,10 +76,10 @@
 		<div class="col-md-4 col-sm-7">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-2 col-sm-12">
-					<h3>IL NOSTRO TEAM HA LA CAPACITÀ DI <b>REAGIRE RAPIDAMENTE</b> AGLI STIMOLI.</h3>
+					<h3>@lang('about.caption-4')</h3>
 				</div>
 				<div id="block_5" class="col-sm-12">
-					<p style="border:1px solid #2e2d30;padding:20px;">Accudiamo il progetto dall’inizio alla fine, con precisione svizzera e nel pieno rispetto dei tempi e dei costi: ogni richiesta, desiderio o aspettativa del cliente, con cui tessiamo un rapporto esclusivo e trasparente, viene esaudito da un project manager a capo di un team di alto profilo. Velocità, pragmatismo e competenza sono nella nostra indole: risolviamo qualsiasi imprevisto con puntualità e sappiamo rendere semplici anche le sfide più complesse.</p>
+					<p style="border:1px solid #2e2d30;padding:20px;">@lang('about.caption-5')</p>
 				</div>
 			</div>
 		</div>
@@ -100,7 +98,7 @@
 		<div class="row m_bot">
 			<div class="col-md-4 col-md-offset-2 col-sm-4 m_top">
 				<p class="m_top">______</p>
-				<h3 class="m_top m_bot"><b>SPAZIO, LUCE, ORDINE:</b><br>DIAMO FORMA ALLE UTOPIE</h3>
+				<h3 class="m_top m_bot">@lang('about.caption-6')</h3>
 				<img src="img/about-us/about-us_05.png">
 			</div>
 
@@ -120,7 +118,7 @@
 			</div>
 			<div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-6 m_bot" id="block_8">
 				<p>______</p>
-				<p class="m_top">MIGLIORIAMO COSTANTEMENTE I MATERIALI, TROVIAMO NUOVI MODI DI SCOLPIRE LA LUCE, RIDUCIAMO AL MINIMO L’IMPATTO AMBIENTALE E <b>CREIAMO UNO STILE AVULSO DA QUALSIASI ALTRA ESPERIENZA PRECEDENTE</b>: UNICO, PERSONALE, SU MISURA.</p>
+				<p class="m_top">@lang('about.caption-7')</p>
 			</div>
 		</div>
 
@@ -136,28 +134,28 @@
 
 		<div class="row" style="margin-bottom:150px;">
 			<div class="col-md-4 col-sm-7 col-md-offset-2 col-sm-offset-1 m_bot20" style="margin-top:-50px">
-				<p>Ogni progetto scaturisce da una visione corale: il nostro team è formato da professionisti che vantano anni di esperienza e formazioni accademiche diverse, tutte di altissimo profilo. Discipline, sensibilità e competenze si contaminano, in modo da seguire con assoluta precisione ogni fase del progetto, senza tralasciare alcun aspetto funzionale, tecnico o estetico grazie a competenze specifiche in ingegneria, architettura, design e costruzione.</p>
+				<p>@lang('about.caption-8')</p>
 			</div>
 			<div class="col-sm-12">
 				<div class="pull-left" style="margin-right:60px">
 					<p class="h1 m_bot0"><b>429</b></p>
-					<p>PROGETTI REALIZZATI</p>
+					<p>@lang('stats-1')</p>
 				</div>
 				<div class="pull-left" style="margin-right:60px">
 					<p class="h1 m_bot0"><b>44</b></p>
-					<p>PROGETTI IN CORSO D'OPERA</p>
+					<p>@lang('stats-2')</p>
 				</div>
 				<div class="pull-left" style="margin-right:60px">
 					<p class="h1 m_bot0"><b>1.531.043</b></p>
-					<p>MQ REALIZZATI</p>
+					<p>@lang('stats-3')</p>
 				</div>
 				<div class="pull-left" style="margin-right:60px">
 					<p class="h1 m_bot0"><b>35</b></p>
-					<p>PROFESSIONISTI</p>
+					<p>@lang('stats-4')</p>
 				</div>
 				<div class="pull-left">
 					<p class="h1 m_bot0"><b>379</b></p>
-					<p>ANNI DI ESPERIENZA COMPLESSIVI</p>
+					<p>@lang('stats-5')</p>
 				</div>
 			</div>
 		</div>
@@ -174,7 +172,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-4">
-				<p id="block_9">Architettura, ingegneria, design e realizzazione: non tralasciamo alcun aspetto del progetto. La nostra esperienza e la competenza indiscussa nei diversi ambiti ci consentono di mantenere il controllo di ogni fase del progetto e di assicurare un risultato di massima qualità. Con il cliente c’è uno scambio continuo: il project manager lo tiene costantemente aggiornato con un report esaustivo sull’evoluzione della commessa.</p>
+				<p id="block_9">@lang('about.caption-9')</p>
 			</div>
 		</div>
 
@@ -188,13 +186,13 @@
 			<div class="col-sm-12" id="block_10">
 				<div class="row">
 					<div class="col-sm-3 col-sm-offset-3">
-						<p>Ogni idea scaturisce dalle esigenze del cliente, che ha un ruolo attivo nella progettazione, e dalla propensione all’innovazione e si evolve attraverso una ricerca mai paga, abbinata all’esperienza e alle forti competenze tecniche.</p>
+						<p>@lang('about.caption-10')</p>
 					</div>
 					<div class="col-sm-3">
-						<p>E’ un nuovo modo di concepire l’architettura: con la nostra visione corale e strategica seguiamo percorsi mai esplorati ma sempre coerenti. Sperimentiamo con la forma e la materia, rigettiamo le ovvietà</p>
+						<p>@lang('about.caption-11')</p>
 					</div>
 					<div class="col-sm-3">
-						<p>e assecondiamo un’attenzione maniacale per il dettaglio. Diamo forma ai sogni. Ci interessano i protagonisti del racconto: le persone.</p>
+						<p>@lang('about.caption-12')</p>
 					</div>
 				</div>
 			</div>

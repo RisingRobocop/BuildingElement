@@ -23,23 +23,24 @@
 					email: <a href="info@buildingelement.ch">info@buildingelement.ch</a>
 				</div>
 				<hr>
-				
-				<form>
+
+				<form action='{{url('mail')}}' method="post">
+					{{ csrf_field() }}
 					<div class="form-group m_bot20">
 						<label for="name">NOME</label>
-						<input type="text" id="contact_name" name="contact[name]" required="required" class="form-control" id="name" />
+						<input type="text" id="contact_name" name="nome" required="required" class="form-control" />
 					</div>
 					<div class="form-group m_bot20">
 						<label for="email">EMAIL</label>
-						<input type="email" id="contact_email" name="contact[email]" required="required" class="form-control" id="email" />
+						<input type="email" id="contact_email" name="email" required="required" class="form-control"  />
 					</div>
 					<div class="form-group m_bot20">
 						<label for="subject">OGGETTO</label>
-						<input type="text" id="contact_subject" name="contact[subject]" required="required" class="form-control" id="subject" />
+						<input type="text" id="contact_subject" name="oggetto" required="required" class="form-control" />
 					</div>
 					<div class="form-group m_bot20">
 						<label for="message">MESSAGGIO</label>
-						<textarea id="contact_message" name="contact[message]" required="required" class="form-control m_top10" rows="5" id="message"></textarea>
+						<textarea id="contact_message" name="messaggio" required="required" class="form-control m_top10" rows="5" ></textarea>
 					</div>
 					<button type="submit" class="form_button m_top20">INVIA</button>
 				</form>

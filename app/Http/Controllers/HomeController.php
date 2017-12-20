@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Nazioni;
 use App\Immagine;
+use App\Message;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\contact;
 use App;
 use Session;
 
@@ -32,7 +35,10 @@ class HomeController extends Controller
     public function projects(Request $request)
     {
       $nazioni=Nazioni::get();
-      return view('home/projects')->with('nazioni',$nazioni);
+      $nome='nome_'.App::getLocale();
+      return view('home/projects')
+            ->with('nazioni',$nazioni)
+            ->with('nome',$nome);
     }
     //ritorna view services
     public function services(Request $request)
@@ -48,5 +54,21 @@ class HomeController extends Controller
 
       Session::put('locale', $locale);
       return Redirect()->back();
+    }
+
+    public function mail(Request $request)
+    {
+      $mail=new Message();
+      $request->validate(['nome'=>'required',
+                          'oggetto'=>'required',
+                          'email'=>'required',
+                          'messaggio'=>'required']);
+      $mail->nome=$request->input('nome');
+      $mail->oggetto=$request->input('oggetto');
+      $mail->email=$request->input('email');
+      $mail->messaggio=$request->input('messaggio');
+      $mail->save();
+      Mail::to('blahblah@nicemailm8.com')->send(new contact($mail));
+      return redirect()->back();
     }
 }

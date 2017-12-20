@@ -6,11 +6,11 @@
 		@foreach ($nazioni as $nazione)
 			<div class="col-sm-3 col-xs-6">
 				<div class="project" data-nation="{{$nazione->id}}">
-					<a href="{{url('storage/uploads/'.$nazione->sfondo)}}" class="html5lightbox" data-group="{{$nazione->nome_en}}">
-						<img src="{{url('storage/uploads/'.$nazione->sfondo)}}" alt="{{$nazione->nome_en}}" title="{{$nazione->nome_en}}">
+					<a href="{{url('storage/uploads/'.$nazione->sfondo)}}" class="html5lightbox" data-group="{{$nazione->$nome}}">
+						<img src="{{url('storage/uploads/'.$nazione->sfondo)}}" alt="{{$nazione->nome_en}}" title="{{$nazione->$nome}}">
 						<div class="pr_overlay">
 							<div class="map" style="background-image: url('{{url('storage/uploads/'.$nazione->mappa)}}')"></div>
-							<div class="title">{{$nazione->nome_en}}</div>
+							<div class="title">{{$nazione->$nome}}</div>
 						</div>
 					</a>
 					@php
@@ -18,7 +18,7 @@
 					@endphp
 					@foreach ($immagini as $immagine)
 						@if ($immagine->indirizzo!=$nazione->mappa)
-							<a href="{{url('storage/uploads/'.$immagine->indirizzo)}}" class="html5lightbox" data-group="{{$nazione->nome_en}}"></a>
+							<a href="{{url('storage/uploads/'.$immagine->indirizzo)}}" class="html5lightbox" data-group="{{$nazione->$nome}}"></a>
 						@endif
 					@endforeach
 				</div>

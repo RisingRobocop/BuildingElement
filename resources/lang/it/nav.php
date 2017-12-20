@@ -3,10 +3,10 @@
 return [
 
 
-    'home' => 'home',
-    'about' => 'chi siamo',
-    'projects' => 'progetti',
-    'services' => 'servizi',
-    'contact' => 'contatti',
+    'home' => 'HOME',
+    'about' => 'CHI SIAMO',
+    'projects' => 'PROGETTI',
+    'services' => 'SERVIZI',
+    'contact' => 'CONTATTI',
 
 ];

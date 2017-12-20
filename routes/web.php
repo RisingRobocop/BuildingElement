@@ -28,6 +28,7 @@ Route::get('/services','HomeController@services')->name('services');
 Route::get('/projects','HomeController@projects')->name('projects');
 Route::get('/contact','HomeController@contact')->name('contact');
 Route::post('/setLocale','HomeController@setLocale');
+Route::post('/mail','HomeController@mail');
 
 //gestione pannello amministrazione
 Route::get('/admin', function () {
