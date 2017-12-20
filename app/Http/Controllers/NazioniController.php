@@ -85,6 +85,8 @@ class NazioniController extends Controller
     public function show($nation_id)
     {
         $nazione=Nazioni::select('id','nome_en','nome_it','nome_de','sfondo','mappa')->where('id',$nation_id)->first();
+        if($nazione==null)
+          return redirect('admin/nations');
         $immagini=Immagine::where('nazioni_id','=',$nation_id)->orderby('ordine')->get();
         return view('admin.nation')
                 ->with('nazione',$nazione)
@@ -100,6 +102,8 @@ class NazioniController extends Controller
      */
     public function update($nation_id,Request $request)
     {
+       if($request->has('delete'))
+          return $this->destroy($nation_id);
 
        $nazione=Nazioni::where('id',$nation_id)->first();
        if($request->has('image-id'))
@@ -130,8 +134,13 @@ class NazioniController extends Controller
      * @param  \App\Nazioni  $nazioni
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Nazioni $nazioni)
+    public function destroy($nation_id)
     {
-        //
+       $nazione=Nazioni::where('id',$nation_id)->first();
+       foreach ( $nazione->immagini as $immagine) {
+         Storage::disk('public')->delete($immagine->indirizzo);
+       }
+       Nazioni::destroy($nation_id);
+       return redirect('admin/nations')->with('status', 'nation deleted');
     }
 }

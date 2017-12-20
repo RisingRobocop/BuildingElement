@@ -19,21 +19,24 @@
           <input type="text" class="form-control mx-sm-3" name="name_de" value="{{$nazione->nome_de}}">
         </div>
         <div class="form-group">
-          <input type="submit" name="" value="edit" class="btn btn-primary">
+          <input type="submit" name="edit" value="edit" class="btn btn-primary">
+          <input type="submit" name="delete" value='delete' class="btn btn-danger">
         </div>
       </form>
     </div>
     <div class="col-md-2">
+      <div class="text-muted">Background</div>
       @if ($nazione->sfondo==null)
-        <img class="img-thumbnail" src="http://via.placeholder.com/150x150" class="img-thumbnail">
+        <img class="img-thumbnail" src="http://via.placeholder.com/800x800" class="img-thumbnail">
       @else
         <img class="img-thumbnail"  src="{{url('storage/uploads/'.$nazione->sfondo)}}">
       @endif
 
     </div>
     <div class="col-md-2">
+      <div class="text-muted">Map</div>
       @if ($nazione->mappa==null)
-        <img class="img-thumbnail" src="http://via.placeholder.com/150x150" class="img-thumbnail">
+        <img class="img-thumbnail" src="http://via.placeholder.com/800x800" class="img-thumbnail">
       @else
         <img class="img-thumbnail"  src="{{url('storage/uploads/'.$nazione->mappa)}}">
       @endif
@@ -42,7 +45,7 @@
   </div>
   <hr>
     <div class="row">
-        <form enctype="multipart/form-data" class="form-inline" method="post" action='{{url('/admin/nations/'.$nazione->id.'/images')}}'>
+        <form enctype="multipart/form-data" class="col-md-12 form-inline" method="post" action='{{url('/admin/nations/'.$nazione->id.'/images')}}'>
           {{ csrf_field() }}
           <div class="form-group mx-sm-3">
             <input type="file" name="image">
@@ -51,12 +54,16 @@
           <button id="set-order" class="btn btn-primary" type="button" name="button">set order</button>
         </form>
 
-      <hr>
-        <div class="col-md-12">
-      		<span class="label label-info">Double click to delete an image or set it as background</span>
-          <span class="label label-info">Sort images by dragging then press set order</span>
+
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <span class="label label-info">Double click to delete an image or set it as background</span>
+        <span class="label label-info">Sort images by dragging then press set order</span>
       </div>
     </div>
+
 
 
   <div class="row">
@@ -99,11 +106,9 @@
               </div>
             </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-danger" name='delete' value="Delete image">
+        <button type="button" id='delete-img' class="btn btn-danger" name="button">delete</button>
         <input type="submit" class="btn btn-primary"name='save' value="Save changes">
       </div>
-
-
       </div>
     </div>
   </form>
@@ -147,12 +152,47 @@
                 alert("Sorry. Server unavailable. ");
               });
             });
-
+      var image_id;
       $( "li" ).dblclick(function() {
           $('.modal').modal('show');
           $('.modal #hidden').attr('value', $(this).attr('id').substring(5,1000));
           $('.modal .modal-title').html('image:'+$(this).attr('id').substring(5,1000));
+          image_id=$(this).attr('id').substring(5,1000);
+    });
+    $('#delete-img').on('click', function()
+    {
+      $.ajax({
+          data:{
+                  id: image_id
+              },
+          type: 'post',
+          url: '{{url('admin/images')}}'+'/'+image_id+'/delete',
+          beforeSend: function (xhr)
+            {
+              var token = $('meta[name="csrf_token"]').attr('content');
+              if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+                }
+            },
+          success: function(data)
+            {
+              console.log(data);
+              location.reload();
+            }
+          })
+          .done(function( ) {
+              })
+          .fail(function()  {
+              console.log(url);
+              alert("Sorry. Server unavailable. ");
+            });
     });
   });
 	</script>
+  <script>
+      $( function() {
+
+      });
+  </script>
+
 @endsection

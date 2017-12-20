@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Nazioni;
+use App\Immagine;
 
 
 //Controller che gestisce il front-end "vetrina"
@@ -26,7 +28,8 @@ class HomeController extends Controller
     //ritorna view projects
     public function projects()
     {
-      return view('home/projects');
+      $nazioni=Nazioni::get();
+      return view('home/projects')->with('nazioni',$nazioni);
     }
     //ritorna view services
     public function services()

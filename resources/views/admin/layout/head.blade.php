@@ -10,20 +10,20 @@
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="{{ URL::asset('admin/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{ URL::asset('admin-themes/css/bootstrap.min.css')}}" rel="stylesheet" />
 
 
     <!-- Animation library for notifications   -->
-    <link href="{{ URL::asset('admin/css/animate.min.css')}}" rel="stylesheet"/>
+    <link href="{{ URL::asset('admin-themes/css/animate.min.css')}}" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="{{ URL::asset('admin/css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet" rel="stylesheet"/>
+    <link href="{{ URL::asset('admin-themes/css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="{{ URL::asset('admin/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ URL::asset('admin/css/custom.css')}}">
+    <link href="{{ URL::asset('admin-themes/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ URL::asset('admin-themes/css/custom.css')}}">
 		<meta name="csrf_token" content="{{ csrf_token() }}" />
 
 </head>

@@ -71,16 +71,16 @@
 
   <!--   Core JS Files   -->
 
-  <script src="{{ URL::asset('admin/js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
-  <script src="{{ URL::asset('admin/js/bootstrap.min.js')}}" type="text/javascript"></script>
+  <script src="{{ URL::asset('admin-themes/js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
+  <script src="{{ URL::asset('admin-themes/js/bootstrap.min.js')}}" type="text/javascript"></script>
   <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-  <script src="{{ URL::asset('admin/js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
+  <script src="{{ URL::asset('admin-themes/js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
 
 
 
 
   <!--  Notifications Plugin    -->
-  <script src="{{ URL::asset('admin/js/bootstrap-notify.js')}}"></script>
+  <script src="{{ URL::asset('admin-themes/js/bootstrap-notify.js')}}"></script>
   @yield('scripts')
 
 

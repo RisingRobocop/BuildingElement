@@ -1,17 +1,20 @@
 @extends('admin.layout.master') @section('content')
 <div class="row">
-	<div class="col-md-1">
+	<div class="col-md-3">
 		<a href='{{url('admin/nations/create')}}'><button  class="custom btn btn-primary"> Add nation</button></a>
-	</div>
-	<div class="col-md-1">
 		<button  id='set-order' type="button" class='custom btn btn-primary' name="button">set order</button>
 	</div>
-	<div class="col-md-12">
-		<span class="label label-info">Double click to edit a nation</span>
+</div>
+<div class="col-md-1-12">
+  <span class="label label-info">Double click to edit a nation</span>
 </div>
 
+
+
+
+
 <div class="row">
-	<div class="col-md-11">
+	<div class="col-md-12">
 		<ul id='sortable' class="list-group">
 			@foreach ($nazioni as $nazione)
 				<li id='item-{{$nazione->id}}' class="list-group-item"><div class="textbox"> <p>{{$nazione->nome_it}}</p> <p>{{$nazione->nome_en}}</p> <p>{{$nazione->nome_de}}</p> </div></li>
