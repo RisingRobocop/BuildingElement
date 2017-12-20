@@ -5,7 +5,13 @@
 				&copy; Building Element - Via Pian Scairolo 11, CH - 6915 Pambio Noranco - Switzerland . designed by <a href="http://www.asborsoniww.com" target="_blank">ASborsoniWorldWide</a>
 			</div>
 			<div class="col-sm-3 text-right">
-				<a href="#">IT</a> | <a href="#">EN</a> | <a href="#">DE</a>
+				<form class="" action="setLocale" method="post">
+					{{ csrf_field() }}
+					<input id="submit" type="submit" name="locale" value="EN">|
+					<input id="submit" type="submit" name="locale" value="IT">|
+					<input id="submit" type="submit" name="locale" value="DE">|
+				</form>
+
 			</div>
 		</div>
 	</div>

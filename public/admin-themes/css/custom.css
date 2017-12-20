@@ -41,3 +41,10 @@
   position: relative;
   z-index: 200 !important ;
 }
+
+input#submit{
+background:none;
+border:none;
+font-size:1em;
+color:white;
+}

@@ -11,9 +11,9 @@
 			<ul class="nav sidebar-nav navbar-nav">
 				<li class="sidebar-brand"><a href="/"><img src="img/logo.png" title="Building Element" alt="Buiding Element"></a></li>
 				<!-- esiste una maniera più pulita e modulare per gestire l'active? -->
-				<li @if(Route::currentRouteName()=='home')class="active"@endif><a href={{route('home')}}>HOME</a></li>
-				<li @if(Route::currentRouteName()=='about')class="active"@endif><a href={{route('about')}}>ABOUT US</a></li>
-				<li @if(Route::currentRouteName()=='services')class="active"@endif><a href={{route('services')}}>SERVICES</a></li>
+				<li @if(Route::currentRouteName()=='home')class="active"@endif><a href={{route('home')}}>@lang('nav.home')</a></li>
+				<li @if(Route::currentRouteName()=='about')class="active"@endif><a href={{route('about')}}>@lang('nav.about')</a></li>
+				<li @if(Route::currentRouteName()=='services')class="active"@endif><a href={{route('services')}}></a></li>
 				<li @if(Route::currentRouteName()=='projects')class="active"@endif><a href={{route('projects')}}>PROJECTS</a></li>
 				<li @if(Route::currentRouteName()=='contact')class="active"@endif><a href={{route('contact')}}>CONTACT US</a></li>
 					@if (Auth::check())
