@@ -34,7 +34,7 @@ class HomeController extends Controller
     //ritorna view projects
     public function projects(Request $request)
     {
-      $nazioni=Nazioni::get();
+      $nazioni=Nazioni::orderBy('ordine')->get();
       $nome='nome_'.App::getLocale();
       return view('home/projects')
             ->with('nazioni',$nazioni)

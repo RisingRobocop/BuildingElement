@@ -33,7 +33,7 @@ class AuthController extends Controller
       $user->password=bcrypt($request->password);
       $user->save();
           dd('done');
-      redirect('/');
+      redirect('');
     }
 
     //mostra la form di login
@@ -47,7 +47,7 @@ class AuthController extends Controller
     {
       if (Auth::attempt(['name' => $request->user, 'password' => $request->password],$request->remember)) {
             // autenticazione passata...
-            return redirect('/');
+            return redirect('/admin');
         }
       return redirect('/login');
     }

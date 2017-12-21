@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="purple" data-image="admin/img/sidebar-5.jpg">
+<div class="sidebar" data-color="black" data-image="admin/img/sidebar-5.jpg">
 
 <!--
 
@@ -9,16 +9,23 @@
 
   <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text">
-                Creative Tim
+            <a href="{{url('/')}}" class="simple-text">
+                BuildingElement
             </a>
         </div>
 
         <ul class="nav">
-            <li class="active">
-                <a href="dashboard.html">
-                    <i class="pe-7s-graph"></i>
-                    <p>Dashboard</p>
+
+            <li class= '@if (url()->current()==url('admin/nations'))active @endif'>
+                <a href="{{url('admin/nations')}}">
+                    <i class="pe-7s-map"></i>
+                    <p>Nations</p>
+                </a>
+            </li>
+          <li class= '@if (url()->current()==url('admin/nations/create'))active @endif'>
+                <a href="{{url('admin/nations/create')}}">
+                    <i class="pe-7s-upload"></i>
+                    <p>Add Nation</p>
                 </a>
             </li>
 

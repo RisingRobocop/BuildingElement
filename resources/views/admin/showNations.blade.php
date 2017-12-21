@@ -7,6 +7,7 @@
 </div>
 <div class="col-md-1-12">
   <span class="label label-info">Double click to edit a nation</span>
+	<span class="label label-info">Sort nations by dragging then press set order</span>
 </div>
 
 
