@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="{{ URL::asset('admin-themes/css/custom.css')}}">
+		<link rel="stylesheet" href="admin-themes/css/custom.css">
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

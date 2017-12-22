@@ -16,7 +16,7 @@
 
   <div class="login-page">
   <div class="form">
-    <form class="login-form" action="{{url('login')}}" method="post">
+    <form class="login-form" action="/login" method="post">
       {{ csrf_field() }}
       <input type="text" name="user" placeholder="username"/>
       <input type="password" name="password" placeholder="password"/>
