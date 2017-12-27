@@ -15,7 +15,7 @@
 //Route::get('/register','AuthController@create');
 //Route::post('/register','AuthController@store');
 
-//URL::forceRootUrl('https://tokenNgrok');
+//URL::forceRootUrl('http://5bad0277.eu.ngrok.io');
 //gestione login
 Route::get('/login','AuthController@showlogin')->name('login');
 Route::post('/login','AuthController@login');

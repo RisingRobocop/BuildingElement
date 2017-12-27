@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Flat HTML5/CSS3 Login Form</title>
+  <title>login</title>
 
 
 
